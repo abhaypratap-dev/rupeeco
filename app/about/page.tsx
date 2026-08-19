@@ -12,7 +12,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About Rupeeco",
   description:
-    "Rupeeco builds the unified financial infrastructure layer for digital India — one API for payments, verification, payouts, collections, banking, commerce, analytics and risk.",
+    "Rupeeco builds the unified financial infrastructure layer for digital India — one API for payments, verification, collections, banking, commerce, analytics and risk.",
 };
 
 const values = [
@@ -42,7 +42,7 @@ const journey = [
   { year: "Foundation", title: "One integration, many rails", body: "Rupeeco starts with a single premise: businesses should not integrate a dozen fintech vendors to move money." },
   { year: "Payments first", title: "Gateway orchestration", body: "Smart routing, failover and a shared token vault ship as the first suite, built on top of India's major acquirers." },
   { year: "Trust layer", title: "Verification and risk", body: "PAN, Aadhaar, GST, CIN and bank verification join an inline risk engine so onboarding and checkout share the same guardrails." },
-  { year: "Full hub", title: "Nine suites, one platform", body: "Payouts, collections, banking, commerce and analytics complete the hub, with a marketplace for everything that comes next." },
+  { year: "Full hub", title: "Eight suites, one platform", body: "Collections, banking, commerce and analytics complete the hub, with a marketplace for everything that comes next." },
 ];
 
 export default function AboutPage() {
@@ -150,15 +150,22 @@ export default function AboutPage() {
                 Talk to <span className="gradient-text">the right team directly</span>
               </>
             }
-            body="Three inboxes, monitored by the people who can actually help."
+            body="Two inboxes, monitored by the people who can actually help."
           />
-          <div className="mt-12 grid gap-5 sm:grid-cols-3">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
             {[
-              { label: "Sales & partnerships", email: site.emails.connect, body: "New business, integrations, pilots and partner proposals." },
-              { label: "Customer support", email: site.emails.support, body: "Live issues, integration questions and production escalations." },
-              { label: "Office of the Director", email: site.emails.director, body: "Escalations, grievance redressal, press and corporate matters." },
+              {
+                label: "Sales, partnerships & escalations",
+                email: site.emails.director,
+                body: "New business, integrations, pilots, partner proposals, grievance redressal and corporate matters.",
+              },
+              {
+                label: "Customer support",
+                email: site.emails.support,
+                body: "Live issues, integration questions, sandbox access and production escalations.",
+              },
             ].map((c, i) => (
-              <Reveal key={c.email} delay={i * 80}>
+              <Reveal key={c.label} delay={i * 80}>
                 <div className="h-full rounded-2xl border border-navy-100 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
                   <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-navy-400">{c.label}</p>
                   <a

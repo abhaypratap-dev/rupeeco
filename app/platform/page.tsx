@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import PlatformLayers from "@/components/PlatformLayers";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import CTASection from "@/components/CTASection";
+import SystemMap from "@/components/SystemMap";
 import Icon from "@/components/Icon";
 
 export const metadata: Metadata = {
@@ -71,18 +71,7 @@ export default function PlatformPage() {
             }
             body="From the businesses that integrate, through the API hub and core platform, down to banks and partners — and back out as value for your business."
           />
-          <Reveal className="mt-12">
-            <div className="overflow-hidden rounded-3xl border border-navy-100 bg-white p-3 shadow-lift sm:p-5">
-              <Image
-                src="/brand/architecture.jpg"
-                alt="Rupeeco platform architecture: API hub with nine suites over a core platform layer, infrastructure and data layer, and the partner integrations ecosystem"
-                width={1024}
-                height={1536}
-                className="h-auto w-full rounded-2xl"
-                sizes="(max-width: 1024px) 100vw, 1100px"
-              />
-            </div>
-          </Reveal>
+          <SystemMap />
         </div>
       </section>
 

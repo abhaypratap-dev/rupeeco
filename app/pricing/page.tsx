@@ -21,7 +21,7 @@ const plans = [
     body: "Everything you need to evaluate the platform before a commercial conversation.",
     cta: { label: "Request keys", href: "/contact" },
     features: [
-      "All nine suites in test mode",
+      "All eight suites in test mode",
       "Simulated failures and settlements",
       "Webhook testing and replay",
       "Community and email support",
@@ -63,7 +63,7 @@ const plans = [
 
 const matrix = [
   { label: "Sandbox environment", s: true, g: true, e: true },
-  { label: "All nine API suites", s: true, g: true, e: true },
+  { label: "All eight API suites", s: true, g: true, e: true },
   { label: "Smart routing & failover", s: false, g: true, e: true },
   { label: "Three-way reconciliation", s: false, g: true, e: true },
   { label: "AI analytics reports", s: false, g: true, e: true },
@@ -76,7 +76,7 @@ const matrix = [
 const faqs = [
   {
     q: "How is pricing calculated?",
-    a: "Most suites are priced per successful API call or per successful transaction — a failed verification or a declined payment is not billed. Payments and payouts additionally carry the underlying rail cost, which we pass through transparently on your invoice.",
+    a: "Most suites are priced per successful API call or per successful transaction — a failed verification or a declined payment is not billed. Payments and collections additionally carry the underlying rail cost, which we pass through transparently on your invoice.",
   },
   {
     q: "Is there a setup or platform fee?",
@@ -91,8 +91,8 @@ const faqs = [
     a: "That is the intent. Sandbox keys are free and unlimited, and we do not ask for a commercial commitment until you are ready to move traffic to production keys.",
   },
   {
-    q: "How do rail costs work for payments and payouts?",
-    a: "Gateway MDR, IMPS/NEFT/RTGS charges and UPI costs are set by the underlying provider or bank. Rupeeco passes them through at cost and charges its own platform fee separately, so you can always see what went where.",
+    q: "How do rail costs work for payments and collections?",
+    a: "Gateway MDR, UPI, net-banking and virtual-account charges are set by the underlying provider or bank. Rupeeco passes them through at cost and charges its own platform fee separately, so you can always see what went where.",
   },
 ];
 
@@ -174,8 +174,8 @@ export default function PricingPage() {
         </div>
         <p className="wrap mt-8 text-center text-[12.5px] text-navy-400">
           Indicative plan structure. Final rates depend on suites, volume and rails — email{" "}
-          <a href={`mailto:${site.emails.connect}`} className="font-semibold text-leaf-600 hover:underline">
-            {site.emails.connect}
+          <a href={`mailto:${site.emails.director}`} className="font-semibold text-leaf-600 hover:underline">
+            {site.emails.director}
           </a>{" "}
           for a rate card.
         </p>

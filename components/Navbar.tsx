@@ -275,8 +275,8 @@ export default function Navbar() {
             </Link>
           </div>
           <p className="pt-6 text-sm text-navy-500">
-            <a href={`mailto:${site.emails.connect}`} className="font-semibold text-leaf-600">
-              {site.emails.connect}
+            <a href={`mailto:${site.emails.director}`} className="font-semibold text-leaf-600">
+              {site.emails.director}
             </a>
           </p>
         </div>

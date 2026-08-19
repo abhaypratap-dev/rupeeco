@@ -12,7 +12,6 @@ const rotating = [
   "Commerce",
   "Analytics",
   "Fraud & Risk",
-  "Payouts",
   "Banking",
 ];
 
@@ -20,7 +19,7 @@ const orbit = [
   { icon: "ShieldCheck", label: "Verification", tone: "text-leaf-500", pos: "-left-6 top-12 xl:-left-12" },
   { icon: "CreditCard", label: "Payments", tone: "text-navy-600", pos: "-right-4 top-4 xl:-right-10" },
   { icon: "QrCode", label: "Collections", tone: "text-navy-600", pos: "-left-4 bottom-20 xl:-left-10" },
-  { icon: "Landmark", label: "Payouts", tone: "text-ember-500", pos: "-right-6 bottom-32 xl:-right-12" },
+  { icon: "Building2", label: "Banking", tone: "text-ember-500", pos: "-right-6 bottom-32 xl:-right-12" },
 ];
 
 export default function Hero() {
@@ -68,7 +67,7 @@ export default function Hero() {
 
           <p className="mt-5 max-w-xl text-[16.5px] leading-relaxed text-navy-500">
             Rupeeco is the API hub that sits between your product and India&apos;s financial rails — gateways, banks,
-            registries and bureaus. One integration, one contract, one dashboard for payments, verification, payouts,
+            registries and bureaus. One integration, one contract, one dashboard for payments, verification,
             collections, banking, commerce, analytics and risk.
           </p>
 

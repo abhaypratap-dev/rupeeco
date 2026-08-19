@@ -41,8 +41,8 @@ const sections: Section[] = [
             and configuration settings.
           </li>
           <li>
-            <strong>Transaction and verification data</strong> — payment, payout, collection, mandate and verification
-            records processed through our APIs on behalf of our customers.
+            <strong>Transaction and verification data</strong> — payment, collection, settlement, mandate and
+            verification records processed through our APIs on behalf of our customers.
           </li>
           <li>
             <strong>Technical data</strong> — IP address, device and browser information, request logs, timestamps and
@@ -89,7 +89,7 @@ const sections: Section[] = [
       <>
         <p>We share personal data only as necessary, with:</p>
         <ul>
-          <li>Banks, payment gateways, payout partners and card networks used to execute your transaction.</li>
+          <li>Banks, payment gateways and card networks used to execute your transaction.</li>
           <li>Verification and data partners, registries and credit bureaus performing an authorised check.</li>
           <li>Cloud infrastructure, communication and analytics providers under contract with us.</li>
           <li>Regulators, law enforcement and courts where legally required.</li>
@@ -168,7 +168,7 @@ export default function PrivacyPolicyPage() {
   return (
     <LegalPage
       title="Privacy Policy"
-      updated="25 July 2026"
+      updated="19 August 2026"
       intro="What we collect, why we collect it, who we share it with, how long we keep it, and what you can ask us to do about it."
       sections={sections}
       contactEmail={site.emails.support}

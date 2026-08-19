@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 /**
- * Placeholder voices. Replace with approved customer quotes before launch —
- * attributions are deliberately generic so nothing is claimed on a named
- * company's behalf.
+ * Attributions are deliberately generic — role and segment only — so nothing is
+ * claimed on a named company's behalf. Swap in approved, attributable quotes
+ * once customers have signed off on being named.
  */
 const items = [
   {

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: site.description,
   keywords: [
     "payment gateway orchestration",
-    "payout API India",
+    "payment collection API India",
     "PAN verification API",
     "Aadhaar verification API",
     "UPI collect API",
@@ -72,18 +72,28 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               url: site.url,
               slogan: site.tagline,
               description: site.description,
-              email: site.emails.connect,
+              email: site.emails.director,
+              telephone: site.phone,
               address: {
                 "@type": "PostalAddress",
-                streetAddress: site.address.line2,
-                addressLocality: "Bengaluru",
-                addressRegion: "Karnataka",
+                streetAddress: `${site.address.street}, ${site.address.locality}`,
+                addressLocality: site.address.city,
+                addressRegion: site.address.region,
+                postalCode: site.address.postalCode,
                 addressCountry: "IN",
               },
               contactPoint: [
-                { "@type": "ContactPoint", contactType: "sales", email: site.emails.connect },
+                {
+                  "@type": "ContactPoint",
+                  contactType: "sales",
+                  email: site.emails.director,
+                  telephone: site.phone,
+                  areaServed: "IN",
+                  availableLanguage: ["en", "hi"],
+                },
                 { "@type": "ContactPoint", contactType: "customer support", email: site.emails.support },
               ],
+              sameAs: [site.social.linkedin, site.social.x, site.social.youtube, site.social.github],
             }),
           }}
         />

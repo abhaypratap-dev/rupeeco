@@ -42,7 +42,7 @@ export default function HomePage() {
             eyebrow="Rupeeco API Hub"
             title={
               <>
-                Nine suites. <span className="gradient-text">One unified platform.</span>
+                Eight suites. <span className="gradient-text">One unified platform.</span>
               </>
             }
             body="Every suite shares the same authentication, the same webhook signature scheme and the same dashboard. Turn on what you need, when you need it."

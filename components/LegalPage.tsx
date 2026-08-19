@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Info } from "lucide-react";
 import PageHero from "./PageHero";
 import { site } from "@/lib/site";
 
@@ -43,15 +42,6 @@ export default function LegalPage({
           </nav>
 
           <div>
-            <div className="mb-9 flex items-start gap-3 rounded-2xl border border-ember-100 bg-ember-50/60 p-5 text-[13px] leading-relaxed text-ember-700">
-              <Info className="mt-0.5 h-4 w-4 shrink-0" />
-              <p>
-                This is a working template prepared for the Rupeeco website. Before launch it should be reviewed and
-                finalised by qualified legal counsel against your actual data practices, licences and regulatory
-                obligations. Rupeeco is not providing legal advice through this page.
-              </p>
-            </div>
-
             <div className="space-y-10">
               {sections.map((s, i) => (
                 <section key={s.id} id={s.id} className="scroll-mt-28">

@@ -62,8 +62,8 @@ export default function CTASection() {
                 Get in touch
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
-              <a href={`mailto:${site.emails.connect}`} className="text-sm font-semibold text-white hover:text-leaf-300">
-                or email {site.emails.connect}
+              <a href={`mailto:${site.emails.director}`} className="text-sm font-semibold text-white hover:text-leaf-300">
+                or email {site.emails.director}
               </a>
             </div>
           </div>

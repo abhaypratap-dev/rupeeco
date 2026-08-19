@@ -8,8 +8,8 @@ const reasons = [
     body: "REST APIs with predictable contracts, idempotency keys and SDKs for Node, Python, Java, PHP and Go. Sandbox mirrors production.",
   },
   {
-    title: "One vendor, nine suites",
-    body: "Add verification, payouts or risk without a new MSA, a new dashboard or another engineering sprint.",
+    title: "One vendor, eight suites",
+    body: "Add verification, collections or risk without a new MSA, a new dashboard or another engineering sprint.",
   },
   {
     title: "Routing that protects revenue",

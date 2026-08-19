@@ -30,29 +30,27 @@ Enquiries are routed by the "What is this about?" selection:
 
 | Enquiry type | Goes to |
 | --- | --- |
-| Sales & pricing · Technical/sandbox · Partnership · Other | `connect@rupeeco.in` |
-| Existing customer support | `support@rupeeco.in` |
-| Escalation / grievance | `director@rupeeco.in` |
+| Sales & pricing · Partnership · Escalation / grievance · Other | `director@rupeeco.in` |
+| Technical / sandbox access · Existing customer support | `support@rupeeco.in` |
 
 ### One-time setup (about 5 minutes)
 
-1. Go to <https://web3forms.com> and enter `connect@rupeeco.in`.
+1. Go to <https://web3forms.com> and enter `director@rupeeco.in`.
 2. Confirm the verification email that arrives in that inbox.
 3. Copy the **access key** you're given.
-4. Repeat steps 1–3 for `support@rupeeco.in` and `director@rupeeco.in`.
-5. Add all three keys in Vercel → **Project → Settings → Environment Variables** (and in `.env.local` for local dev):
+4. Repeat steps 1–3 for `support@rupeeco.in`.
+5. Add both keys in Vercel → **Project → Settings → Environment Variables** (and in `.env.local` for local dev):
 
 ```
-NEXT_PUBLIC_WEB3FORMS_KEY_CONNECT=your-connect-key
-NEXT_PUBLIC_WEB3FORMS_KEY_SUPPORT=your-support-key
 NEXT_PUBLIC_WEB3FORMS_KEY_DIRECTOR=your-director-key
+NEXT_PUBLIC_WEB3FORMS_KEY_SUPPORT=your-support-key
 ```
 
 6. Redeploy.
 
 Behaviour without keys:
 
-- Only `CONNECT` set → all enquiries go to `connect@rupeeco.in`.
+- Only `DIRECTOR` set → all enquiries go to `director@rupeeco.in`.
 - No keys set → the submit button opens a **prefilled email** in the visitor's mail client addressed to the right inbox, so the form is never a dead end.
 
 Each email arrives with the reply-to set to the sender's address, so you can reply straight from Gmail.
@@ -65,7 +63,7 @@ Each email arrives with the reply-to set to the sender's address, so you can rep
 
 1. Push this folder to a Git repository.
 2. In Vercel, **Add New → Project** and import the repo. Framework is detected as Next.js; no build settings to change.
-3. Add the three environment variables above.
+3. Add the two environment variables above.
 4. Deploy, then add `rupeeco.in` and `www.rupeeco.in` under **Settings → Domains**.
 5. Update `site.url` in `lib/site.ts` if the canonical domain differs — it drives metadata, `sitemap.xml` and `robots.txt`.
 
@@ -78,7 +76,7 @@ app/
   layout.tsx              root layout, metadata, JSON-LD, nav + footer
   page.tsx                homepage
   products/page.tsx       API Hub overview
-  products/[slug]/        9 product pages, generated from lib/products.ts
+  products/[slug]/        8 product pages, generated from lib/products.ts
   platform/               architecture, security, reliability
   solutions/              by industry + by outcome
   developers/             quickstart, principles, endpoint index, SDKs, webhooks
@@ -91,11 +89,11 @@ app/
 components/               Navbar, Footer, Hero, ProductGrid, IndustryTabs,
                           Stats, Counter, Testimonials, CTASection, PageHero,
                           PlatformLayers, HowItWorksFlow, ContactForm,
-                          CodeBlock, LegalPage, Reveal, Logo, Icon
+                          CodeBlock, LegalPage, SystemMap, Reveal, Logo, Icon
 
 lib/
   site.ts                 company details, email addresses, navigation
-  products.ts             all 9 suites, industries, partners, stats
+  products.ts             all 8 suites, industries, partners, stats
   forms.ts                form routing + Web3Forms config
 
 public/brand/             logo assets, OG image, architecture diagram
@@ -115,12 +113,13 @@ Theme derives from the Rupeeco logo; motion and layout take cues from digio.in �
 
 ---
 
-## Before launch
+## Launch checklist
 
-- [ ] Add Web3Forms keys and send a test submission to each of the three inboxes.
-- [ ] Have counsel review `privacy-policy`, `terms` and `grievance-redressal` — they are drafted templates, and each page carries a visible reviewer notice you should remove once finalised.
-- [ ] Replace the placeholder testimonials in `components/Testimonials.tsx` with approved quotes.
+Company details (name, GSTIN, registered office, phone, `director@rupeeco.in`, canonical domain) live in `lib/site.ts` and are already set to the live values. Remaining items:
+
+- [ ] Add Web3Forms keys and send a test submission to both inboxes.
+- [ ] Have counsel sign off on `privacy-policy`, `terms` and `grievance-redressal` against your actual data practices and licences.
+- [ ] Swap the quotes in `components/Testimonials.tsx` for approved, attributable customer quotes.
 - [ ] Confirm the stats in `lib/products.ts` (uptime, latency, integration counts) and the pricing structure match reality.
 - [ ] Verify the partner and bank list on `/products` reflects live integrations.
-- [ ] Set the registered address and phone number in `lib/site.ts`.
 - [ ] Point social links in `lib/site.ts` at real profiles, or remove them.

@@ -4,9 +4,9 @@ import Logo from "./Logo";
 import { footerNav, site } from "@/lib/site";
 
 const contacts = [
-  { label: "Sales & partnerships", email: site.emails.connect },
+  { label: "Sales & partnerships", email: site.emails.director },
   { label: "Customer support", email: site.emails.support },
-  { label: "Office of the Director", email: site.emails.director },
+  { label: "Grievance & escalation", email: site.emails.director },
 ];
 
 export default function Footer() {
@@ -42,16 +42,18 @@ export default function Footer() {
           <div>
             <Logo variant="light" withTagline />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-navy-100/80">
-              Rupeeco is a unified financial infrastructure platform — payments, verification, payouts, collections,
-              banking, commerce, analytics and risk, delivered through a single integration.
+              Rupeeco is a unified financial infrastructure platform — payments, verification, collections, banking,
+              commerce, analytics and risk, delivered through a single integration.
             </p>
             <div className="mt-6 space-y-2.5 text-sm">
               <p className="flex items-start gap-2.5 text-navy-100/80">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-leaf-300" />
                 <span>
-                  {site.address.line2}
+                  {site.address.street}
                   <br />
-                  {site.address.city}, {site.address.country}
+                  {site.address.locality}
+                  <br />
+                  {site.address.region} {site.address.postalCode}, {site.address.country}
                 </span>
               </p>
               <p className="flex items-center gap-2.5 text-navy-100/80">
@@ -105,7 +107,7 @@ export default function Footer() {
         {/* Email routing */}
         <div className="grid gap-4 border-t border-white/10 py-8 sm:grid-cols-3">
           {contacts.map((c) => (
-            <div key={c.email} className="rounded-xl border border-white/10 bg-white/[0.04] p-4">
+            <div key={c.label} className="rounded-xl border border-white/10 bg-white/[0.04] p-4">
               <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-navy-200">{c.label}</p>
               <a
                 href={`mailto:${c.email}`}
@@ -120,7 +122,7 @@ export default function Footer() {
 
         <div className="flex flex-col gap-3 border-t border-white/10 py-7 text-[12.5px] text-navy-200 md:flex-row md:items-center md:justify-between">
           <p>
-            © {year} {site.legalName}. All rights reserved.
+            © {year} {site.legalName}. All rights reserved. · GSTIN {site.gstin}
           </p>
           <p className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <span className="rounded-full border border-white/15 px-2.5 py-1">PCI DSS aligned</span>

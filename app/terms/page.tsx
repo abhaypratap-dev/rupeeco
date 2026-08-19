@@ -158,12 +158,35 @@ const sections: Section[] = [
     ),
   },
   {
+    id: "entity",
+    heading: "Who you are contracting with",
+    body: (
+      <>
+        <p>
+          The Rupeeco website, APIs, SDKs, sandbox and dashboard are operated by {site.legalName}, a company
+          incorporated in India.
+        </p>
+        <ul>
+          <li>
+            Registered office: {site.address.street}, {site.address.locality}, {site.address.region}{" "}
+            {site.address.postalCode}, {site.address.country}
+          </li>
+          <li>GSTIN: {site.gstin}</li>
+          <li>
+            Email: <a href={`mailto:${site.emails.director}`}>{site.emails.director}</a> · Phone:{" "}
+            <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
     id: "law",
     heading: "Governing law and disputes",
     body: (
       <p>
-        These terms are governed by the laws of India. The courts at Bengaluru, Karnataka have exclusive jurisdiction,
-        save that either party may seek urgent injunctive relief in any competent court. Before commencing proceedings,
+        These terms are governed by the laws of India. The courts at Gautam Buddha Nagar, Uttar Pradesh have exclusive
+        jurisdiction, save that either party may seek urgent injunctive relief in any competent court. Before commencing proceedings,
         the parties will attempt in good faith to resolve the dispute through their designated representatives.
       </p>
     ),
@@ -174,10 +197,10 @@ export default function TermsPage() {
   return (
     <LegalPage
       title="Terms & Conditions"
-      updated="25 July 2026"
+      updated="19 August 2026"
       intro="The rules that govern use of the Rupeeco website, APIs, SDKs, sandbox and dashboard."
       sections={sections}
-      contactEmail={site.emails.connect}
+      contactEmail={site.emails.director}
     />
   );
 }

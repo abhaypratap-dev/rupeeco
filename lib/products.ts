@@ -94,7 +94,7 @@ export const products: Product[] = [
       },
       {
         title: "Settlement you can trust",
-        body: "Payout files, fees and taxes are normalised across providers into a single settlement report per cycle.",
+        body: "Settlement files, fees and taxes are normalised across providers into a single settlement report per cycle.",
       },
     ],
     useCases: [
@@ -284,47 +284,8 @@ metric=success_rate&group_by=gateway&from=2026-07-01" \\
   -H "Authorization: Bearer $RUPEECO_KEY"`,
   },
   {
-    slug: "payouts",
-    index: 8,
-    name: "Payout Hub",
-    icon: "Landmark",
-    tone: "ember",
-    tagline: "Money out, at any scale",
-    summary:
-      "Send money to bank accounts, UPI handles and cards through IMPS, NEFT, RTGS and UPI rails — one payout API with beneficiary validation, maker-checker approvals and bulk file support.",
-    features: ["Vendor Payouts", "Salary Payouts", "Refund Payouts", "Bulk Transfer", "Beneficiary Validation", "Rail Selection"],
-    highlights: [
-      {
-        title: "Rail picked for you",
-        body: "IMPS, NEFT, RTGS or UPI chosen by amount, urgency and bank-window availability, with automatic retry on the next best rail.",
-      },
-      {
-        title: "Validate before you send",
-        body: "Penny-drop or penniless account verification runs inline so failed credits stop being a support ticket.",
-      },
-      {
-        title: "Bulk with control",
-        body: "Upload 100,000 rows, get row-level status, and gate release behind maker-checker approvals.",
-      },
-    ],
-    useCases: ["Marketplace seller settlements", "Payroll and contractor payouts", "Insurance and refund disbursals"],
-    endpoint: { method: "POST", path: "/v1/payouts" },
-    sample: `curl https://api.rupeeco.in/v1/payouts \\
-  -H "Authorization: Bearer $RUPEECO_KEY" \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "amount": 1550000,
-    "mode": "auto",
-    "beneficiary": {
-      "name": "Meera Traders",
-      "ifsc": "HDFC0000123",
-      "account_number": "50100234567890"
-    }
-  }'`,
-  },
-  {
     slug: "banking",
-    index: 9,
+    index: 8,
     name: "Banking APIs",
     icon: "Building2",
     tone: "leaf",
@@ -387,7 +348,6 @@ export const partners = [
     group: "Payment Gateways",
     items: ["Razorpay", "Cashfree", "Paytm", "PayU", "CCAvenue", "BillDesk", "Juspay", "Easebuzz"],
   },
-  { group: "Payout Partners", items: ["Cashfree Payouts", "Decentro", "Paysprint", "RazorpayX", "Pay10", "Open"] },
   { group: "Verification Partners", items: ["Protean", "IDfy", "SignDesk", "Suro", "AuthBridge", "Veri5"] },
   { group: "Banking Partners", items: ["HDFC Bank", "ICICI Bank", "Axis Bank", "YES Bank", "Kotak"] },
   {
@@ -402,7 +362,7 @@ export const industries = [
     label: "Startups & D2C",
     icon: "Rocket",
     headline: "Ship a payment stack in a week, not a quarter",
-    body: "Skip the multi-vendor integration marathon. One Rupeeco key gives you checkout, refunds, payouts and verification with sandbox parity from day one.",
+    body: "Skip the multi-vendor integration marathon. One Rupeeco key gives you checkout, collections, refunds and verification with sandbox parity from day one.",
     points: [
       "Hosted checkout and payment links live the same day",
       "Refunds and settlement reports without a finance hire",
@@ -415,7 +375,7 @@ export const industries = [
     label: "SaaS Platforms",
     icon: "Layers",
     headline: "Embed financial services inside your product",
-    body: "White-label payments, subscription billing and payouts under your own brand, with per-tenant ledgers and revenue share built into the platform.",
+    body: "White-label payments, subscription billing and collections under your own brand, with per-tenant ledgers and revenue share built into the platform.",
     points: [
       "Sub-merchant onboarding with automated KYB",
       "Metered and tiered subscription billing",
@@ -431,7 +391,7 @@ export const industries = [
     body: "Escrow-backed collections with rule-based seller settlements, commission handling and GST-compliant invoicing on both sides of the transaction.",
     points: [
       "Escrow and split settlement on every order",
-      "Bulk seller payouts with beneficiary validation",
+      "Seller onboarding with PAN, GST and bank verification",
       "Commission, TDS and TCS handled at source",
       "Seller-level reconciliation and statements",
     ],
@@ -453,10 +413,10 @@ export const industries = [
     id: "enterprise",
     label: "Enterprises & SMEs",
     icon: "Building",
-    headline: "Automate vendor, payroll and tax operations",
-    body: "Move payables onto a single API with maker-checker controls, ERP-synced reconciliation and GST-ready documentation for every rupee out the door.",
+    headline: "Automate receivables, reconciliation and tax operations",
+    body: "Move collections onto a single API with maker-checker controls, ERP-synced reconciliation and GST-ready documentation for every rupee that moves.",
     points: [
-      "Vendor and salary payouts at file scale",
+      "Virtual accounts and collections at file scale",
       "Maker-checker approvals and role-based access",
       "Three-way reconciliation into Tally, SAP or Zoho",
       "GST e-invoice and e-way bill generation",

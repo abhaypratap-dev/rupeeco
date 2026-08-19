@@ -10,7 +10,7 @@ import { partners } from "@/lib/products";
 export const metadata: Metadata = {
   title: "Products — the Rupeeco API Hub",
   description:
-    "Nine API suites on one unified platform: payments, verification, payouts, collections, banking, commerce, analytics, fraud & risk, and the API marketplace.",
+    "Eight API suites on one unified platform: payments, verification, collections, banking, commerce, analytics, fraud & risk, and the API marketplace.",
 };
 
 export default function ProductsPage() {
@@ -24,7 +24,7 @@ export default function ProductsPage() {
             One unified platform for <span className="gradient-text">every financial service</span>
           </>
         }
-        body="Nine suites, over a hundred endpoints, one authentication scheme. Start with a single suite and switch on the rest from the same dashboard whenever your product needs them."
+        body="Eight suites, over a hundred endpoints, one authentication scheme. Start with a single suite and switch on the rest from the same dashboard whenever your product needs them."
         primary={{ label: "Get in touch", href: "/contact" }}
         secondary={{ label: "Read the docs", href: "/developers" }}
       />
@@ -59,7 +59,7 @@ export default function ProductsPage() {
                 Relationships we hold <span className="gradient-text">so you don&apos;t have to</span>
               </>
             }
-            body="Gateways, payout partners, verification providers, banks and data sources — maintained, monitored and swapped without changing your code."
+            body="Gateways, verification providers, banks and data sources — maintained, monitored and swapped without changing your code."
           />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {partners.map((p, i) => (

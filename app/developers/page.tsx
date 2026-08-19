@@ -26,7 +26,7 @@ const sdks = [
 ];
 
 const principles = [
-  { icon: "KeyRound", title: "One key, every suite", body: "A single scoped API key authenticates against all nine suites. Rotate without redeploying." },
+  { icon: "KeyRound", title: "One key, every suite", body: "A single scoped API key authenticates against all eight suites. Rotate without redeploying." },
   { icon: "Zap", title: "Idempotency built in", body: "Send an Idempotency-Key header on any write and retry safely — duplicate charges are impossible." },
   { icon: "Activity", title: "Signed webhooks", body: "HMAC-SHA256 signatures, exactly-once delivery, automatic retry with exponential backoff and a replay API." },
   { icon: "Gauge", title: "Predictable errors", body: "Stable machine-readable error codes with a human message and a docs link on every failure." },
@@ -63,7 +63,7 @@ curl https://api.rupeeco.in/v1/verify/pan \\
 curl https://api.rupeeco.in/v1/webhooks \\
   -H "Authorization: Bearer $RUPEECO_KEY" \\
   -d '{ "url": "https://yourapp.com/hooks/rupeeco",
-        "events": ["payment.captured", "payout.processed"] }'`;
+        "events": ["payment.captured", "verification.completed"] }'`;
 
 export default function DevelopersPage() {
   return (
@@ -120,7 +120,7 @@ export default function DevelopersPage() {
             eyebrow="Endpoint index"
             title={
               <>
-                Nine suites, <span className="gradient-text">one base URL</span>
+                Eight suites, <span className="gradient-text">one base URL</span>
               </>
             }
             body="https://api.rupeeco.in — versioned, region-routed and rate-limited per key."
@@ -213,8 +213,8 @@ export default function DevelopersPage() {
               </ul>
               <p className="mt-5 text-[13.5px] text-navy-600">
                 Need keys today? Email{" "}
-                <a href={`mailto:${site.emails.connect}`} className="font-semibold text-leaf-700 hover:underline">
-                  {site.emails.connect}
+                <a href={`mailto:${site.emails.support}`} className="font-semibold text-leaf-700 hover:underline">
+                  {site.emails.support}
                 </a>{" "}
                 with your company name and the suites you want to test.
               </p>

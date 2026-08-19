@@ -10,25 +10,23 @@ import { site } from "./site";
  * Create one Web3Forms access key per destination inbox and add them to
  * Vercel → Project → Settings → Environment Variables:
  *
- *   NEXT_PUBLIC_WEB3FORMS_KEY_CONNECT   → connect@rupeeco.in
- *   NEXT_PUBLIC_WEB3FORMS_KEY_SUPPORT   → support@rupeeco.in
  *   NEXT_PUBLIC_WEB3FORMS_KEY_DIRECTOR  → director@rupeeco.in
+ *   NEXT_PUBLIC_WEB3FORMS_KEY_SUPPORT   → support@rupeeco.in
  *
- * Only the CONNECT key is required; the others fall back to it.
- * Until any key is set, the form degrades gracefully to a prefilled mailto.
+ * Only the DIRECTOR key is required; SUPPORT falls back to it.
+ * Until either key is set, the form degrades gracefully to a prefilled mailto.
  */
 export const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 
-export type Route = "connect" | "support" | "director";
+export type Route = "support" | "director";
 
 const keys: Record<Route, string | undefined> = {
-  connect: process.env.NEXT_PUBLIC_WEB3FORMS_KEY_CONNECT,
   support: process.env.NEXT_PUBLIC_WEB3FORMS_KEY_SUPPORT,
   director: process.env.NEXT_PUBLIC_WEB3FORMS_KEY_DIRECTOR,
 };
 
 export function accessKey(route: Route): string | undefined {
-  return keys[route] || keys.connect;
+  return keys[route] || keys.director;
 }
 
 export function mailboxFor(route: Route): string {
@@ -39,19 +37,19 @@ export const inquiryTypes: { value: string; label: string; route: Route; hint: s
   {
     value: "sales",
     label: "Sales & pricing",
-    route: "connect",
+    route: "director",
     hint: "Rate cards, volumes, commercial terms",
   },
   {
     value: "integration",
     label: "Technical / sandbox access",
-    route: "connect",
+    route: "support",
     hint: "API keys, integration design, docs",
   },
   {
     value: "partnership",
     label: "Partnership",
-    route: "connect",
+    route: "director",
     hint: "Banks, gateways, resellers, referrals",
   },
   {
@@ -69,7 +67,7 @@ export const inquiryTypes: { value: string; label: string; route: Route; hint: s
   {
     value: "other",
     label: "Something else",
-    route: "connect",
+    route: "director",
     hint: "Press, careers, general enquiries",
   },
 ];
@@ -82,7 +80,6 @@ export const suiteOptions = [
   "Analytics & Insights",
   "Fraud & Risk Engine",
   "API Marketplace",
-  "Payout Hub",
   "Banking APIs",
 ];
 

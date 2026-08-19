@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Grievance Redressal",
   description:
-    "How to raise a complaint with Rupeeco, the escalation levels available, and the timelines we commit to at each stage.",
+    "How to raise a complaint with Rupeeco, the escalation levels available, the timelines we commit to at each stage, and our registered office details.",
 };
 
 const sections: Section[] = [
@@ -30,36 +30,21 @@ const sections: Section[] = [
   },
   {
     id: "level-2",
-    heading: "Level 2 — Nodal escalation",
+    heading: "Level 2 — Grievance Officer, Office of the Director",
     body: (
       <>
         <p>
           If your complaint is unresolved after the Level 1 timeline, or you are not satisfied with the outcome, escalate
-          with your original ticket reference.
+          to the Office of the Director with your original ticket reference. Matters relating to data protection, conduct
+          or compliance may be raised here directly.
         </p>
         <ul>
           <li>
-            Email: <a href={`mailto:${site.emails.connect}`}>{site.emails.connect}</a> with subject line
+            Email: <a href={`mailto:${site.emails.director}`}>{site.emails.director}</a> with subject line
             &ldquo;Escalation — [ticket reference]&rdquo;
           </li>
-          <li>Acknowledgement: within 2 business days</li>
-          <li>Target resolution: 15 business days</li>
-        </ul>
-      </>
-    ),
-  },
-  {
-    id: "level-3",
-    heading: "Level 3 — Office of the Director",
-    body: (
-      <>
-        <p>
-          Complaints that remain unresolved after Level 2, and matters relating to data protection, conduct or
-          compliance, may be escalated to the Office of the Director.
-        </p>
-        <ul>
           <li>
-            Email: <a href={`mailto:${site.emails.director}`}>{site.emails.director}</a>
+            Phone: <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a> (Mon–Fri, 10:00–18:00 IST)
           </li>
           <li>Acknowledgement: within 3 business days</li>
           <li>Target resolution: 30 days from the date of the original complaint</li>
@@ -74,7 +59,7 @@ const sections: Section[] = [
       <ul>
         <li>Your name, organisation and registered contact details.</li>
         <li>Merchant or account identifier, and the relevant API or dashboard environment.</li>
-        <li>Transaction, payout, mandate or request IDs, with timestamps in IST.</li>
+        <li>Transaction, settlement, mandate or request IDs, with timestamps in IST.</li>
         <li>A clear description of the issue and the resolution you are seeking.</li>
         <li>Any supporting evidence — never include full card numbers, CVVs, OTPs or Aadhaar numbers.</li>
       </ul>
@@ -105,6 +90,31 @@ const sections: Section[] = [
     ),
   },
   {
+    id: "company",
+    heading: "Registered office and company details",
+    body: (
+      <>
+        <p>Written complaints may also be sent by post to our registered office.</p>
+        <ul>
+          <li>
+            <strong>{site.legalName}</strong>
+          </li>
+          <li>
+            {site.address.street}, {site.address.locality}, {site.address.region} {site.address.postalCode},{" "}
+            {site.address.country}
+          </li>
+          <li>GSTIN: {site.gstin}</li>
+          <li>
+            Phone: <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
+          </li>
+          <li>
+            Email: <a href={`mailto:${site.emails.director}`}>{site.emails.director}</a>
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
     id: "records",
     heading: "Records and reporting",
     body: (
@@ -121,7 +131,7 @@ export default function GrievancePage() {
   return (
     <LegalPage
       title="Grievance Redressal"
-      updated="25 July 2026"
+      updated="19 August 2026"
       intro="If something has gone wrong, here is exactly who to write to, what to include, and how long each stage should take."
       sections={sections}
       contactEmail={site.emails.director}

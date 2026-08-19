@@ -38,11 +38,11 @@ const outcomeBlocks = [
     href: "/products/fraud-risk",
   },
   {
-    id: "payables",
-    title: "Automated payables and payroll",
-    body: "Move vendor, salary and refund payouts onto one API with beneficiary validation, maker-checker approvals and row-level status on bulk files.",
-    points: ["Bulk payouts at file scale", "Penny-drop beneficiary validation", "Maker-checker approval chains", "GST e-invoice and e-way bill"],
-    href: "/products/payouts",
+    id: "onboarding",
+    title: "Faster customer and vendor onboarding",
+    body: "PAN, Aadhaar, GST, CIN and bank verification resolve against source-of-truth registries in a single call, so onboarding stops waiting on manual document review.",
+    points: ["KYC and KYB in one API call", "Penny-drop bank account validation", "Fuzzy name matching across documents", "Signed, audit-ready verification trails"],
+    href: "/products/verification",
   },
 ];
 
